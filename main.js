@@ -139,4 +139,71 @@
     const heroName = returnName();
     console.log({ heroName });
 })();
+(() => {
+    var _a, _b, _c, _d;
+    const daniel = {
+        name: 'Daniel',
+        surnames: 'Pompa Pareja',
+        age: 48,
+        email: 'daniel.pompa@gmail.com',
+        getName() {
+            return this.name;
+        },
+        getSurnames() {
+            return this.surnames;
+        },
+        getAge() {
+            return this.age;
+        },
+        getEmail() {
+            return this.email;
+        },
+    };
+    console.log(daniel);
+    console.log((_a = daniel.getName) === null || _a === void 0 ? void 0 : _a.call(daniel));
+    console.log((_b = daniel.getSurnames) === null || _b === void 0 ? void 0 : _b.call(daniel));
+    console.log((_c = daniel.getAge) === null || _c === void 0 ? void 0 : _c.call(daniel));
+    console.log((_d = daniel.getEmail) === null || _d === void 0 ? void 0 : _d.call(daniel));
+})();
+(() => {
+    var _a, _b, _c, _d;
+    const daniel = {
+        name: 'Daniel',
+        surnames: 'Pompa Pareja',
+        age: 48,
+        email: 'daniel.pompa@gmail.com',
+        getName() {
+            return this.name;
+        },
+        getSurnames() {
+            return this.surnames;
+        },
+        getAge() {
+            return this.age;
+        },
+        getEmail() {
+            return this.email;
+        },
+    };
+    console.log(daniel);
+    console.log((_a = daniel.getName) === null || _a === void 0 ? void 0 : _a.call(daniel));
+    console.log((_b = daniel.getSurnames) === null || _b === void 0 ? void 0 : _b.call(daniel));
+    console.log((_c = daniel.getAge) === null || _c === void 0 ? void 0 : _c.call(daniel));
+    console.log((_d = daniel.getEmail) === null || _d === void 0 ? void 0 : _d.call(daniel));
+})();
+(() => {
+    let myCustomVariable = 'Daniel';
+    console.log(myCustomVariable);
+    console.log(typeof myCustomVariable);
+    myCustomVariable = 48;
+    console.log(myCustomVariable);
+    console.log(typeof myCustomVariable);
+    myCustomVariable = {
+        name: 'Gael',
+        surnames: 'Pompa Ciambrino',
+        age: 1,
+    };
+    console.log(myCustomVariable);
+    console.log(typeof myCustomVariable);
+})();
 //# sourceMappingURL=main.js.map
