@@ -79,4 +79,64 @@
     }
     greeting('Hola mundo!!');
 })();
+(() => {
+    const fullName = (firstName, lastName, upperCase = false) => {
+        if (upperCase) {
+            return `${firstName} ${lastName || ''}`.toUpperCase();
+        }
+        else {
+            return `${firstName} ${lastName || ''}`;
+        }
+    };
+    const name = fullName('Gael', 'Pompa', true);
+    console.log({ name });
+})();
+(() => {
+    const fullName = (firstName, lastName) => {
+        return `${firstName} ${lastName || ''}`;
+    };
+    const name = fullName('Gael');
+    console.log({ name });
+})();
+(() => {
+    function maxOfTwoNumbers(a, b) {
+        if (a > b) {
+            return a;
+        }
+        else {
+            return b;
+        }
+    }
+    const max = maxOfTwoNumbers(48, 40);
+    console.log({ max });
+    const fullName = (firstName, lastName) => {
+        return `${firstName} ${lastName}`;
+    };
+    const name = fullName('Gael', 'Pompa');
+    console.log({ name });
+})();
+(() => {
+    const fullName = (firstName, ...restArgs) => {
+        return `${firstName} ${restArgs.join(' ')}`;
+    };
+    const name = fullName('Gael', 'Pompa', 'Ciambrino');
+    console.log({ name });
+})();
+(() => {
+    const addNumbers = (a, b) => a + b;
+    const greet = (name) => `Hola ${name}`;
+    const myBelovedSon = () => 'Gael Pompa Ciambrino';
+    let myFunction = myBelovedSon;
+    myFunction = myBelovedSon;
+    console.log({ myFunction });
+    console.log(myFunction());
+})();
+(() => {
+    const hero = 'Wolverine';
+    function returnName() {
+        return hero;
+    }
+    const heroName = returnName();
+    console.log({ heroName });
+})();
 //# sourceMappingURL=main.js.map
