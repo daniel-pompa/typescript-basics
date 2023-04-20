@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Light.ttf');
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  padding: 0 1rem;
+  background-color: #1e293b;
+  font-family: 'Roboto', system-ui, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #f1f5f9;
+  margin-top: 8rem;
+}
