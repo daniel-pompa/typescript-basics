@@ -28,3 +28,75 @@ In this exercises you will apply:
 - Create namespaces
 - Use of generics
 - Use decorators
+
+To see the result of the exercises change include in the ```tsconfig.json``` file located in the root of the project. **NOT** in the ```tsconfig.json``` file in the```typescript-node``` directory.
+
+Examples:
+
+```json
+"include": [
+    "data-types"
+]
+```
+
+```json
+"include": [
+    "objects"
+]
+```
+
+```json
+"include": [
+    "functions"
+]
+```
+
+```json
+"include": [
+    "ES6"
+]
+```
+
+```json
+"include": [
+    "classes"
+]
+```
+
+```json
+"include": [
+    "interfaces"
+]
+```
+
+## Modules and Webpack project
+
+This project is in the directory ```typescript-node```
+
+- After download the code, in the ```typescript-node``` directory, run the following command:
+
+```bash
+npm install
+```
+
+This command will download all the node modules needed to run the project.
+
+- When you have finished installing the ```node_modules```, you can then run the project with the following command:
+
+```bash
+npm start
+```
+
+For that to work, remember to run that command in the same directory where the ```package.json``` is located.
+
+## Change the port
+
+By default, the port I set for this project is ``8081``, but if you need to change it because that port might be used by your computer, you can change it by opening the ```package.json`` >> scripts. There you will see the instruction that launches the development server
+
+```bash
+"scripts": {
+    "start": "webpack serve --mode development --open --port=8081"
+}
+```
+
+Simply change the port to the one you need. Save the changes before running ```npm start``` again.
