@@ -14,6 +14,14 @@ TypeScript code converts to JavaScript, which runs anywhere JavaScript runs: In 
 
 TypeScript understands JavaScript and uses type inference to give you great tooling without additional code.
 
+## Requirements
+
+It is necessary to have installed:
+
+A source code editor such as [VSCode](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/) or any other editor we like.
+
+[![TypeScript](https://img.shields.io/badge/typescrypt-v4.3.5-blue)](https://www.typescriptlang.org/) [![Node.js](https://img.shields.io/badge/node-v18.14.1-green)](https://nodejs.org/es) [![NPM](https://img.shields.io/badge/npm-v9.3.1-red)](https://www.npmjs.com/)
+
 ## Learning goals
 
 In this exercises you will apply:
@@ -100,3 +108,66 @@ By default, the port I set for this project is ``8081``, but if you need to chan
 ```
 
 Simply change the port to the one you need. Save the changes before running ```npm start``` again.
+
+## Dotenv
+
+Dotenv is a zero-dependency module that loads environment variables from a ```.env``` file into ```process.env```. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+
+### Install
+
+Install ```dotenv`` using your favorite package manager:
+
+```bash
+npm install dotenv --save
+```
+
+```bash
+yarn add dotenv
+```
+
+### Usage
+
+Create a ```.env``` file in the root of your project:
+
+```js
+MARVEL_API_KEY='YOUR API KEY HERE'
+HASH='HASH GENERATED WITH TIMESTAMP+PRIVATE KEY+PUBLIC KEY'
+TS='TIMESTAMP'
+```
+
+Import and configure dotenv in ```webpack.config.js```
+
+```js
+const webpack = require('webpack');
+
+// Replace accordingly './.env' with the path of your .env file
+require('dotenv').config({ path: './.env' });
+
+const path = require('path');
+
+module.exports = {
+    entry: './src/index.ts',
+    devtool: 'inline-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': JSON.stringify(process.env)
+        }),
+    ]
+};
+```
