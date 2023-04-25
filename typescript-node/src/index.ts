@@ -1,8 +1,10 @@
-import { Person } from './classes/Person';
-import customers from './data/customers';
+import { getMarvelHero } from "./generics/get-marvel-hero";
+import { getPokemon } from "./generics/get-pokemon";
 
-const person = new Person('Daniel', 'Pompa Pareja', 48);
+getMarvelHero('Wolverine')
+    .then(hero => console.log(hero.data.results[0].name.toUpperCase(), hero.data.results))
+    .catch(error => console.log(error))
 
-console.log(person);
-
-console.log(customers);
+getPokemon(150)
+    .then(pokemon => console.log(pokemon.name.toUpperCase(), pokemon.abilities))
+    .catch(error => console.log(error))
