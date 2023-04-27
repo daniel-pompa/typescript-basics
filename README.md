@@ -14,6 +14,26 @@ TypeScript code converts to JavaScript, which runs anywhere JavaScript runs: In 
 
 TypeScript understands JavaScript and uses type inference to give you great tooling without additional code.
 
+More information about TypeScript can be found at the following link [TypeScript](https://www.typescriptlang.org/)
+
+## How to install TypeScript?
+
+Install ```TypeScript``` using your favorite package manager:
+
+```bash
+npm install typescript --save-dev
+```
+
+```bash
+yarn add typescript --dev
+```
+
+Globally Installing TypeScript
+
+```bash
+npm install -g typescript
+```
+
 ## Requirements
 
 It is necessary to have installed:
@@ -24,7 +44,7 @@ A source code editor such as [VSCode](https://code.visualstudio.com/), [Sublime 
 
 ## Learning goals
 
-In this exercises you will apply:
+In this exercise you will apply:
 
 - The different data types that exist in TypeScript
 - Functions
@@ -37,7 +57,7 @@ In this exercises you will apply:
 - Use of generics
 - Use decorators
 
-To see the result of the exercises change include in the ```tsconfig.json``` file located in the root of the project. **NOT** in the ```tsconfig.json``` file in the```typescript-node``` directory.
+To see the result of the exercises change include it in the `tsconfig.json```` file located in the root of the project. **NOT** in the ```tsconfig.json``` file in the```typescript-node``` directory.
 
 Examples:
 
@@ -81,7 +101,7 @@ Examples:
 
 This project is in the directory ```typescript-node```
 
-- After download the code, in the ```typescript-node``` directory, run the following command:
+- After downloading the code, in the ```typescript-node``` directory, run the following command:
 
 ```bash
 npm install
@@ -171,3 +191,47 @@ module.exports = {
     ]
 };
 ```
+
+## Express API
+
+This app starts a server and listens on port 3000 for connections. The app responds with “Hello world!” for requests to the root URL (/) or route. For every other path, it will respond with a 404 Not Found.
+
+```ts
+import express from 'express';
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.status(200).send({
+        message: 'Hola mundo!'
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Aplicación a la escucha en http://localhost:${port}`);
+});
+```
+
+### What is Express?
+
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+More information about Express can be found at the following link [Express](https://expressjs.com/)
+
+This project is in the directory ```express-api```
+
+- After downloading the code, in the ```express-api``` directory, run the following command:
+
+```bash
+npm install
+```
+
+This command will download all the node modules needed to run the project.
+
+- When you have finished installing the ```node_modules```, you can then run the project with the following command:
+
+```bash
+npm start
+```
+
+For that to work, remember to run that command in the same directory where the ```package.json``` is located.
