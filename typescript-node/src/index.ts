@@ -1,10 +1,8 @@
-import { getMarvelHero } from "./generics/get-marvel-hero";
-import { getPokemon } from "./generics/get-pokemon";
+import { Hero } from './decorators/Hero';
 
-getMarvelHero('Wolverine')
-    .then(hero => console.log(hero.data.results[0].name.toUpperCase(), hero.data.results))
-    .catch(error => console.log(error))
+const wolverine = new Hero('Wolverine');
 
-getPokemon(150)
-    .then(pokemon => console.log(pokemon.name.toUpperCase(), pokemon.abilities))
-    .catch(error => console.log(error))
+// (Hero.prototype as any).customName = 'X-Men Wolverine';
+// wolverine.api = 'https://developer.some.com';
+wolverine.saveHero(1000);
+console.log(wolverine);
